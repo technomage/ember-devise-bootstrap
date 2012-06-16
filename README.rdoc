@@ -1,0 +1,9 @@
+= EmberDeviseBootstrap
+This project provides a login UI uising Ember.js and Twitter Bootstrap that
+is compatible with Devise.
+
+The first step is to extract this from an existing project and get it working in that
+context.  This will work for the User resource, then it will be generalized for more
+resources.
+
+This project is released under the MIT-LICENSE.
