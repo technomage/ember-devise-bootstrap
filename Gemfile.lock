@@ -211,7 +211,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  coffee-rails (~> 3.2.1)
+  coffee-rails (>= 3.2.1)
   cucumber-rails
   database_cleaner
   devise
@@ -220,7 +220,7 @@ DEPENDENCIES
   jquery-rails
   omniauth-facebook
   rspec-rails
-  sass-rails (~> 3.2.3)
+  sass-rails (>= 3.2.3)
   spork
   sqlite3
   twitter-bootstrap-rails
