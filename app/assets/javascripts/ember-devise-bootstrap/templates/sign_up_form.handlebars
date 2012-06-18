@@ -1,0 +1,18 @@
+<h2>Sign up</h2><br>
+
+<form accept-charset="UTF-8" {{action "signUp" on="submit" target="EmberDeviseBootstrap.signUpController"}}
+  action="#" class="new_user" id="new_user" method="post">
+
+  {{view "Bootstrap.Forms.TextField"
+          label="email" valueBinding="EmberDeviseBootstrap.signUpController.email"
+          bindingContextBinding="EmberDeviseBootstrap.signUpController"}}
+  {{view "Bootstrap.Forms.TextField" label="password"
+          valueBinding="EmberDeviseBootstrap.signUpController.password"}}
+  {{view "Bootstrap.Forms.TextField" label="password_confirmation"
+          valueBinding="EmberDeviseBootstrap.signUpController.passwordConfirmation"}}
+
+  <div><input name="commit" type="submit" value="Sign Up"></div>
+</form>
+
+<a href="/users/password/new">Forgot your password?</a>
+<a href="/users/auth/facebook">Sign in with Facebook</a>

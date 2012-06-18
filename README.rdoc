@@ -2,8 +2,19 @@
 This project provides a login UI uising Ember.js and Twitter Bootstrap that
 is compatible with Devise.
 
+At this time the full set of devise views are embedded in this engine.  Hopefully this
+will change as all the devise functions are fronted with Ember UI rather than separate
+pages.
+
 The first step is to extract this from an existing project and get it working in that
 context.  This will work for the User resource, then it will be generalized for more
 resources.
 
 This project is released under the MIT-LICENSE.
+
+- Notes
+The test cases for this project are all in cucumber which can be invoked from the project root directory.  The
+facebook integration for the test app is configured to use a dummy facebook app configured for callbacks on
+127.0.0.1:5555 so any manual testing will need to use a similar URL when using facebook integrations.  To keep
+the repository clear of any credentials the test app looks for facebook credentials in the environment variables
+facebook_user and facebook_pass.

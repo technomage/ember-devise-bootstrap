@@ -4,6 +4,7 @@ require 'rails/all'
 
 Bundler.require
 require "ember-devise-bootstrap"
+require 'ember-rails'
 
 module Dummy
   class Application < Rails::Application
@@ -54,6 +55,9 @@ module Dummy
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Configure the ember variant
+    config.ember.variant = 'development'
   end
 end
 

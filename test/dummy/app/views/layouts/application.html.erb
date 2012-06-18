@@ -3,12 +3,39 @@
 <head>
   <title>Dummy</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <script type="text/javascript">
+    ENV = {VIEW_PRESERVES_CONTEXT: true, CP_DEFAULT_CACHEABLE: true};
+    authParams = {'authenticity_token':'<%= form_authenticity_token %>'};
+    Devise = {
+      password_length: {min:<%= Devise.password_length.min.to_json.html_safe %>,
+        max:<%= Devise.password_length.max.to_json.html_safe %>},
+      email_pattern: <%= '^[^@]+@[^@]+$'.to_json.html_safe %>
+    }
+  </script>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div id="navbar-container" class="container-fluid">
+      <a class="brand" href="/">EmberDeviseBootstrap</a>
+      <div id="nav_container" class="container-fluid nav-collapse" style="display: inline-block">
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
 
 <%= yield %>
+
+<script type="text/javascript">
+  jQuery(function() {
+    EmberDeviseBootstrap.set('currentUser', EmberDeviseBootstrap.User.create({
+      email: <%= (current_user.email rescue nil).to_json.html_safe %>,
+      id: <%= (current_user.id rescue nil).to_json.html_safe %>
+    }));
+  })
+</script>
 
 </body>
 </html>

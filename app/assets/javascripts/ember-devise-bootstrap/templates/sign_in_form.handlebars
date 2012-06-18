@@ -1,0 +1,18 @@
+<h2>Sign in</h2><br>
+
+<form accept-charset="UTF-8" {{action "signIn" on="submit" target="EmberDeviseBootstrap.signInController"}}
+  action="#" class="new_user" id="new_user" method="post">
+  {{view "Bootstrap.Forms.TextField"
+          label="email" valueBinding="EmberDeviseBootstrap.signInController.email"}}
+  {{view "Bootstrap.Forms.TextField" label="password"
+          valueBinding="EmberDeviseBootstrap.signInController.password"}}
+  <div style="margin-bottom: 18px">
+  <label for="rememberMe" style="display:inline-block; padding-right: 10px;">Remember Me</label>
+  {{view "Ember.Checkbox" checkedBinding="EmberDeviseBootstrap.signInController.rememberMe" name="rememberMe"}}
+  </div>
+  <div><input name="commit" type="submit" value="Sign In"></div>
+</form>
+
+<a href="#" {{action "forgotPassword" target="EmberDeviseBootstrap.signInController"}}>Forgot your password?</a>
+<a href="/users/auth/facebook">Sign in with Facebook</a>
+

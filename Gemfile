@@ -7,6 +7,10 @@ gemspec
 
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
+gem "devise"
+gem "omniauth-facebook"
+gem "twitter-bootstrap-rails"
+gem "ember-rails"
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
@@ -15,3 +19,23 @@ gem "jquery-rails"
 
 # To use debugger
 # gem 'debugger'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', :platform => :ruby
+
+  gem 'uglifier', '>= 1.0.3'
+end
+
+group :test do
+   gem 'cucumber-rails'
+   gem "rspec-rails"
+   gem "database_cleaner"
+   gem "spork"
+   gem "capybara"
+end

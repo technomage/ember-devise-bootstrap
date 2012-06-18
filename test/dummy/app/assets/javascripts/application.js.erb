@@ -10,6 +10,29 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
+//= require ember-devise-bootstrap
+//= require_self
 //= require_tree .
+
+Dummy = Ember.Application.create({
+  version: '0.0.1'
+});
+
+Dummy.NavController = Ember.Object.extend({
+  navView: Bootstrap.NavList.create({
+    itemTitleKey: 'title',
+    itemValueKey: 'value',
+    contentBinding: "Dummy.navController.pages",
+    selectionBinding: "Dummy.navController.selection"
+  })
+});
+
+Dummy.set('navController', Dummy.NavController.create({
+  pages: [],
+  selection: null,
+}) );
+
+
+jQuery(function() {
+  Dummy.navController.get('navView').appendTo('#nav_container')
+})

@@ -1,0 +1,8 @@
+<li id="account_menu" class="dropdown menu">
+  <a class="dropdown-toggle" href="#" data-toggle="dropdown">{{EmberDeviseBootstrap.currentUser.email}} <b class="caret"></b></a>
+  <ul class="dropdown-menu">
+    <li><a href="#" {{action "showAccount" target="EmberDeviseBootstrap"}}>My Account</a></li>
+    <li class="divider"></li>
+    <li><a href="#" {{action "signOut" target="EmberDeviseBootstrap"}}>Sign Out</a></li>
+  </ul>
+</li>
